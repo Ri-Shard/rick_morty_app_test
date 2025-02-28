@@ -4,5 +4,6 @@ abstract class CharactersRepository {
   Future<List<CharactersModel>> getAllCharacter(int count);
 
   Future<List<CharactersModel>> getNameCharacter(String name);
+
   Future<List<CharactersModel>> getFavoriteCharacter();
 }

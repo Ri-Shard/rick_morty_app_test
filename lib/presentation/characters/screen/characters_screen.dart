@@ -21,7 +21,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
 
   @override
   void initState() {
-    store.fetchCharacters(20);
+    store.fetchCharacters(500);
     super.initState();
   }
 
