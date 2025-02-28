@@ -2,7 +2,14 @@
 
 Aplicación móvil Flutter que permita a los usuarios explorar los personajes de Rick y Morty.
 Visualizando información detallada de personajes todo ello obtenido a través de la API oficial de Rick y Morty.
-![Screenshots](assets/allcharacters.png)
+![Screenshots]
+<p align="center">
+  <img src="assets/allcharacters.png" alt="Todos los Personajes" width="200"/>
+  <img src="assets/details.png" alt="Pagina detalles" width="200"/>
+  <img src="assets/favs.png" alt="Pagina favoritos" width="200"/>
+    <img src="assets/testresults.png" alt=" Resultados Test" width="200"/>
+
+</p>
 ## Proceso de Instalación
 
 **version de flutter 3.5.4**
