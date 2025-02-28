@@ -9,7 +9,7 @@ Visualizando información detallada de personajes todo ello obtenido a través d
 
 1. Clona el repositorio:
    ```sh
-   git clone https://github.com/yourusername/test_rickandmorty_map.git
+   git clone https://github.com/Ri-Shard/rick_morty_app_test
 2. Abre en tu IDE de preferencia
 3. Navega a la ruta del proyecto
 4. Instala las dependencias con el comando
