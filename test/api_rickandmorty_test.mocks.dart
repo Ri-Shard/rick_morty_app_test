@@ -337,4 +337,15 @@ class MockCharactersRepositoryImpl extends _i1.Mock
         returnValue: _i4.Future<List<_i9.CharactersModel>>.value(
             <_i9.CharactersModel>[]),
       ) as _i4.Future<List<_i9.CharactersModel>>);
+
+  @override
+  _i4.Future<List<_i9.CharactersModel>> getFavoriteCharacter() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getFavoriteCharacter,
+          [],
+        ),
+        returnValue: _i4.Future<List<_i9.CharactersModel>>.value(
+            <_i9.CharactersModel>[]),
+      ) as _i4.Future<List<_i9.CharactersModel>>);
 }

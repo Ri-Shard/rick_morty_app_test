@@ -69,7 +69,7 @@ mixin _$CharactersStore on CharactersBase, Store {
       AsyncAction('CharactersBase.applyFilter', context: context);
 
   @override
-  Future applyFilter(String text) {
+  Future<void> applyFilter(String text) {
     return _$applyFilterAsyncAction.run(() => super.applyFilter(text));
   }
 

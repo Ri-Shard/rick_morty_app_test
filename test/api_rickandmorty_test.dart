@@ -12,17 +12,19 @@ import 'api_rickandmorty_test.mocks.dart';
 @GenerateMocks([http.Client, CharactersRepositoryImpl])
 void main() {
   group('ApiCharactersDatasource', () {
-    late CharactersRepositoryImpl datasource;
+    late ApiCharactersDatasource datasource;
     late MockClient mockClient;
     late MockCharactersRepositoryImpl mockRepository;
 
     setUp(() {
       mockRepository = MockCharactersRepositoryImpl();
       mockClient = MockClient();
-      datasource = CharactersRepositoryImpl(ApiCharactersDatasource());
+      datasource = ApiCharactersDatasource();
     });
 
-    test('getAllCharacter returns a list of characters when the call completes successfully', () async {
+    test(
+        'getAllCharacter returns a list of characters when the call completes successfully',
+        () async {
       final response = jsonEncode([
         {
           "id": 1,
@@ -57,27 +59,31 @@ void main() {
         }
       ]);
 
-      when(mockClient.get(Uri.parse('https://rickandmortyapi.com/api/character/1,2')))
+      when(mockClient
+              .get(Uri.parse('https://rickandmortyapi.com/api/character/1,2')))
           .thenAnswer((_) async => http.Response(response, 200));
 
-      final result = await mockClient.get(Uri.parse('https://rickandmortyapi.com/api/character/1,2'));
+      final result = await mockClient
+          .get(Uri.parse('https://rickandmortyapi.com/api/character/1,2'));
       final characters = await datasource.getAllCharacter(2);
-
       expect(characters.length, 2);
       expect(result.statusCode, 200);
       expect(characters[0].name, 'Rick Sanchez');
       expect(characters[1].name, 'Morty Smith');
     });
 
-    test('getAllCharacter returns an empty list when the call completes with an error', () async {
-      
+    test(
+        'getAllCharacter returns an empty list when the call completes with an error',
+        () async {
       final List<CharactersModel> list = [];
       when(mockRepository.getAllCharacter(2)).thenAnswer((_) async => list);
 
-      when(mockClient.get(Uri.parse('https://rickandmortyapi.com/api/character/1,2')))
+      when(mockClient
+              .get(Uri.parse('https://rickandmortyapi.com/api/character/1,2')))
           .thenAnswer((_) async => http.Response('Not Found', 404));
 
-      final result = await mockClient.get(Uri.parse('https://rickandmortyapi.com/api/character/1,2'));
+      final result = await mockClient
+          .get(Uri.parse('https://rickandmortyapi.com/api/character/1,2'));
       final characters = await mockRepository.getAllCharacter(2);
 
       expect(characters.length, 0);

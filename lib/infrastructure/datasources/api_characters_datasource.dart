@@ -6,8 +6,6 @@ import 'package:test_rickandmorty_map/domain/entities/characters_entities.dart';
 import 'package:http/http.dart' as http;
 
 class ApiCharactersDatasource extends CharactersDatasource {
-  final favoritePreference = FavoritePreference();
-
   @override
   Future<List<CharactersModel>> getAllCharacter(int count) async {
     List<CharactersModel> characters = [];
@@ -49,10 +47,11 @@ class ApiCharactersDatasource extends CharactersDatasource {
 
   @override
   Future<List<CharactersModel>> getFavoriteCharacter() async {
+    final favoritePreference = FavoritePreference();
+
     List<CharactersModel> characters = [];
     final data = await favoritePreference.getFavorite();
     String idsString = data.join(',');
-    print(idsString);
     try {
       final rest = await http.get(
         Uri.parse('https://rickandmortyapi.com/api/character/$idsString'),
