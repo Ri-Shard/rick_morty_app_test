@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test_rickandmorty_map/common/theme/styles.dart';
 import 'package:test_rickandmorty_map/domain/entities/characters_entities.dart';
+import 'package:test_rickandmorty_map/domain/services/notification_service.dart';
 import 'package:test_rickandmorty_map/presentation/characters/providers/characters_controller.dart';
 import 'package:test_rickandmorty_map/presentation/characters/providers/characters_provider.dart';
 

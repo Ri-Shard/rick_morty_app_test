@@ -52,8 +52,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
                     child: SizedBox(
                       height:
                           isLandscape ? size.height * 0.10 : size.height * 0.04,
-                      width:
-                          isLandscape ? size.width * 0.05 : size.width * 0.010,
+                      width: isLandscape ? size.width * 0.05 : size.width * 0.1,
                       child: SvgPicture.asset(
                         'assets/favorite.svg',
                         fit: BoxFit.cover,

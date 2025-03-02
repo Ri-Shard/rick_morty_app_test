@@ -62,6 +62,9 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> {
                       if (rest)
                         setState(() {
                           isFavorite = true;
+                          NotificationService().showNotification(
+                              'Agregado a Favoritos',
+                              'Se ha agregado una imagen a favoritos');
                         });
                     },
                     child: Container(
