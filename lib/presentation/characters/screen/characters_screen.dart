@@ -28,7 +28,8 @@ class _CharactersScreenState extends State<CharactersScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     return Scaffold(
       body: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
@@ -49,8 +50,10 @@ class _CharactersScreenState extends State<CharactersScreen> {
                   GestureDetector(
                     onTap: () => context.push('/favorite'),
                     child: SizedBox(
-                      height: size.height * 0.04,
-                      width: size.width * 0.10,
+                      height:
+                          isLandscape ? size.height * 0.10 : size.height * 0.04,
+                      width:
+                          isLandscape ? size.width * 0.05 : size.width * 0.010,
                       child: SvgPicture.asset(
                         'assets/favorite.svg',
                         fit: BoxFit.cover,
@@ -118,8 +121,12 @@ class _CharactersScreenState extends State<CharactersScreen> {
                       crossAxisSpacing:
                           20.0, // Espacio horizontal entre columnas
                       mainAxisSpacing: 20.0, // Espacio vertical entre filas
-                      childAspectRatio:
-                          (size.width * 0.35) / (size.height * 0.19),
+                      childAspectRatio: (isLandscape
+                              ? size.width * 0.03
+                              : size.width * 0.35) /
+                          (isLandscape
+                              ? size.height * 0.04
+                              : size.height * 0.19),
                     ),
                     itemCount: store.filterCharacters.length,
                     itemBuilder: (BuildContext context, int index) {
