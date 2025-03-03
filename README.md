@@ -73,6 +73,3 @@ Esta capa maneja las vistas y la estructura de los widgets del el aplicativo mó
 6. **Pruebas Unitarias**:
 -Escritura de pruebas unitarias para garantizar la calidad del código y detectar errores tempranamente.
 -Cobertura de pruebas para los modelos de datos, repositorios y lógica de negocio.
-7. **Visualización de Ubicaciones en un Mapa**:
--Utilización del paquete flutter_map para mostrar las ubicaciones de los personajes en un mapa interactivo.
--Personalización del mapa con marcadores, pop-ups y diferentes tipos de capas.
